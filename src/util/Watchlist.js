@@ -1,8 +1,10 @@
+import {url} from "./Setup";
+
 export const Watchlist = {
 
     getUserWatchlist(readerId) {
 
-        return fetch(`http://localhost:8080/v1/watchlist/${readerId}`
+        return fetch(`${url}/v1/watchlist/${readerId}`
         ).then(response => {
 
                 if (response.ok) {
@@ -28,7 +30,7 @@ export const Watchlist = {
 
     getUserEbooks(readerId) {
 
-        return fetch(`http://localhost:8080/v1/watchlist/e/${readerId}`
+        return fetch(`${url}/v1/watchlist/e/${readerId}`
         ).then(response => {
 
                 if (response.ok) {
@@ -55,7 +57,7 @@ export const Watchlist = {
     //check if works
     addToWatchlist(readerId, book) {
 
-        const url = `http://localhost:8080/v1/watchlist/${readerId}`;
+        const url = `${url}/v1/watchlist/${readerId}`;
         const data = JSON.stringify(book);
 
         return fetch(url, {
@@ -81,7 +83,7 @@ export const Watchlist = {
 
     removeFromWatchlist(bookId) {
 
-        return fetch(`http://localhost:8080/v1/watchlist/${bookId}`, {
+        return fetch(`${url}/v1/watchlist/${bookId}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-type': 'application/json',

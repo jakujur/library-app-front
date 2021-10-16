@@ -1,8 +1,10 @@
+import {url} from "./Setup";
+
 export const Rentals = {
 
     getUserRentals(userId) {
 
-        return fetch(`http://localhost:8080/v1/rentals/${userId}`
+        return fetch(`${url}/v1/rentals/${userId}`
         ).then(response => {
 
                 if (response.ok) {
@@ -33,7 +35,7 @@ export const Rentals = {
     //check if works
     addToRentals(readerId, bookId) {
 
-        const url = `http://localhost:8080/v1/rentals/${bookId}?readerId=${readerId}`;
+        const url = `${url}/v1/rentals/${bookId}?readerId=${readerId}`;
 
         return fetch(url, {
                 method: 'POST',
