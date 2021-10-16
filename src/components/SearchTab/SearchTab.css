@@ -1,0 +1,9 @@
+.highlight {
+    color: white;
+    text-shadow:3px 0 black;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}

@@ -1,0 +1,48 @@
+.google-book {
+    background-color: white;
+    width: 200px;
+    height: 330px;
+    border-style: solid;
+    border-radius: 5px;
+    margin: 3px 3px;
+    border-color: #979797;
+    border-width: 1px;
+    padding: 5px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s;
+}
+
+.google-book:hover {
+    transform: scale(1.02);
+}
+
+.google-book img {
+    align-self: center;
+    justify-self: center;
+    max-width: 180px;
+}
+
+.book-link {
+    text-decoration: none;
+    color: black;
+}
+
+.google-button {
+    width: 180px;
+    height: 30px;
+
+    background-color: var(--light-theme);
+    cursor: pointer;
+    font-size: 15px;
+    color: #979797;
+    transition: all 0.3s;
+    position: relative;
+
+    text-align: center;
+    overflow: hidden;
+
+    border-radius: 5px;
+    box-shadow: 0 6px 5px -10px;
+}

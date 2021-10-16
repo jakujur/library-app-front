@@ -1,0 +1,62 @@
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+nav{
+  top: 0;
+  position: fixed;
+  width: calc(100%);
+  background-color: white;
+  z-index: 100;
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #979797;
+  margin-bottom: 20px;
+}
+
+nav > a {
+  padding-top: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #000000;
+  text-decoration-line: none;
+
+}
+
+nav > a.active {
+  text-decoration-line: underline;
+}
+
+main{
+  top:50px;
+  position: relative;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.account {
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.navigation {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

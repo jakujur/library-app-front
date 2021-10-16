@@ -1,0 +1,9 @@
+.bookstore-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+h2{
+    color: white;
+    text-shadow:3px 0 black;
+}
