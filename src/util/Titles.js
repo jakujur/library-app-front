@@ -1,10 +1,10 @@
-import {url} from "./Setup";
+import {address} from "./Setup";
 
 export const Titles = {
 
     addToWatchlist(title) {
 
-        const url = `${url}/v1/titles`;
+        const url = `${address}/v1/titles`;
         const data = JSON.stringify(title);
 
         return fetch(url, {

@@ -1,10 +1,10 @@
-import {url} from "./Setup";
+import {address} from "./Setup";
 
 export const Search = {
 
     searchLibrary(keyword) {
 
-        return fetch(`${url}/v1/books/search/${keyword}`
+        return fetch(`${address}/v1/books/search/${keyword}`
         ).then(response => {
 
                 if (response.ok) {
@@ -28,7 +28,7 @@ export const Search = {
 
     searchBookstore(keyword, readerId) {
 
-        return fetch(`${url}/v1/bookstore/${keyword}?readerId=${readerId}`
+        return fetch(`${address}/v1/bookstore/${keyword}?readerId=${readerId}`
         ).then(response => {
 
                 if (response.ok) {
@@ -54,7 +54,7 @@ export const Search = {
 
     searchGoogleBooks(keyword, readerId) {
 
-        return fetch(`${url}/v1/google/${keyword}?readerId=${readerId}`
+        return fetch(`${address}/v1/google/${keyword}?readerId=${readerId}`
         ).then(response => {
 
                 if (response.ok) {

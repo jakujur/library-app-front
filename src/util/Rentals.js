@@ -1,10 +1,10 @@
-import {url} from "./Setup";
+import {address} from "./Setup";
 
 export const Rentals = {
 
     getUserRentals(userId) {
 
-        return fetch(`${url}/v1/rentals/${userId}`
+        return fetch(`${address}/v1/rentals/${userId}`
         ).then(response => {
 
                 if (response.ok) {
@@ -35,7 +35,7 @@ export const Rentals = {
     //check if works
     addToRentals(readerId, bookId) {
 
-        const url = `${url}/v1/rentals/${bookId}?readerId=${readerId}`;
+        const url = `${address}/v1/rentals/${bookId}?readerId=${readerId}`;
 
         return fetch(url, {
                 method: 'POST',
