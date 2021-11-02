@@ -1,2 +1,2 @@
-export const address = "https://it-library.herokuapp.com/"
+export const address = "https://it-bookstore-library.herokuapp.com/"
 
