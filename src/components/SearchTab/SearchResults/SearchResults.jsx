@@ -12,6 +12,7 @@ export const SearchResults = (props) => {
                 Rent a book from our library
                 <br />
             </h2>}
+
             <div className={"library-list"}>
                 {
                     props.searchResults.map(book => {

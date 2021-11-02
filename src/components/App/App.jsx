@@ -4,12 +4,18 @@ import {SearchTab} from '../SearchTab/SearchTab';
 import {WatchlistTab} from '../WatchlistTab/WatchlistTab'
 import {RentalsTab} from '../Rentals/RentalsTab'
 import {Login} from '../Login/Login';
+import {TitlesTab} from "../TitlesTab/TitlesTab";
+import {BooksTab} from "../BooksTab/BooksTab";
+import {RentalsTable} from "../RentalsTable/RentalsTable";
+import {RegisterForm} from "../Login/RegisterForm/RegisterForm";
+import {ReadersTable} from "../ReadersTable/ReadersTable";
 import {UserContext} from "../../contexts/UserContext";
 import React, {useState, useMemo, useEffect} from "react";
 
 function App() {
 
     const [user, setUser] = useState(null);
+    const value = useMemo(() => ({user, setUser}), [user, setUser]);
 
     useEffect(() => {
         const loggedInUser = localStorage.getItem("user");
@@ -19,19 +25,42 @@ function App() {
         }
     }, []);
 
-    const value = useMemo(() => ({user, setUser}), [user, setUser]);
-
     const ROUTES = {
         SEARCH: "/search",
         WATCHLIST: "/watchlist",
         RENTALS: "/rentals",
-        LOGIN: "/login"
+        LOGIN: "/login",
+        TITLES: "/titles",
+        BOOKS: "/books",
+        ALL_RENTALS: "/all_rentals",
+        REGISTER: "/register",
+        READERS: "/readers"
     };
 
-    return (
-        <div className={"app"}>
-            <nav>
-                {user ?
+    const navigation = () => {
+        if (user){
+            if (user.admin) {
+                return(
+                    <>
+                        <NavLink to={ROUTES.TITLES} activeClassName="active" className={"navigation"}>
+                            Titles
+                        </NavLink>
+                        <NavLink to={ROUTES.BOOKS} activeClassName="active" className={"navigation"}>
+                            Books
+                        </NavLink>
+                        <NavLink to={ROUTES.ALL_RENTALS} activeClassName="active" className={"navigation"}>
+                            Rentals
+                        </NavLink>
+                        <NavLink to={ROUTES.READERS} activeClassName="active" className={"navigation"}>
+                            Readers
+                        </NavLink>
+                        <NavLink to={ROUTES.LOGIN} activeClassName="active" className="account">
+                            Account
+                        </NavLink>
+                    </>
+                )
+            } else {
+                return(
                     <>
                         <NavLink to={ROUTES.SEARCH} activeClassName="active" className={"navigation"}>
                             Search
@@ -43,15 +72,24 @@ function App() {
                             Rentals
                         </NavLink>
                         <NavLink to={ROUTES.LOGIN} activeClassName="active" className="account">
-                            {user.username}
+                            Account
                         </NavLink>
                     </>
-                    :
-                    <NavLink to={ROUTES.LOGIN} activeClassName="active" className="account">
-                        Log In
-                    </NavLink>
+                )
+            }
+        } else {
+            return(
+                <NavLink to={ROUTES.LOGIN} activeClassName="active" className="account">
+                    Log In
+                </NavLink>
+            )
+        }
+    }
 
-                }
+    return (
+        <div className={"app"}>
+            <nav>
+                {navigation()}
             </nav>
             <main>
                 <Switch>
@@ -63,6 +101,11 @@ function App() {
                         <Route path={ROUTES.SEARCH} component={SearchTab}/>
                         <Route path={ROUTES.WATCHLIST} component={WatchlistTab}/>
                         <Route path={ROUTES.RENTALS} component={RentalsTab}/>
+                        <Route path={ROUTES.TITLES} component={TitlesTab}/>
+                        <Route path={ROUTES.BOOKS} component={BooksTab}/>
+                        <Route path={ROUTES.ALL_RENTALS} component={RentalsTable}/>
+                        <Route path={ROUTES.REGISTER} component={RegisterForm}/>
+                        <Route path={ROUTES.READERS} component={ReadersTable}/>
                         <Route path={ROUTES.LOGIN} component={Login}/>
                     </UserContext.Provider>
                 </Switch>

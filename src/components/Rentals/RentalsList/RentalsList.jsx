@@ -10,11 +10,16 @@ export const RentalsList = (props) => {
         {title: "Return date", field: 'returnDate'},
         {title: "Status", field: 'status'},
     ]
+
     return (
         <div>
             <MaterialTable title={"Rentals"}
                            columns={columns}
-                           data={props.rentals} />
+                           data={props.rentals}
+                           options={{
+                               pageSize:10,
+                               emptyRowsWhenPaging: false,
+                           }}/>
         </div>
     )
 }

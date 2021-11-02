@@ -1,11 +1,11 @@
 import {address} from "./Setup";
 
-export const Titles = {
+export const Books = {
 
-    addTitle(title) {
+    addBook(book) {
 
-        const url = `${address}/v1/titles`;
-        const data = JSON.stringify(title);
+        const url = `${address}/v1/books`;
+        const data = JSON.stringify(book);
 
         return fetch(url, {
                 method: 'POST',
@@ -21,16 +21,16 @@ export const Titles = {
                     return response;
                 }
 
-                throw new Error('Request failed!');
+                alert('Title name not found in the database!')
 
             }, networkError => console.log(networkError.message)
         )
 
     },
 
-    getAllTitles() {
+    getAllBooks() {
 
-        return fetch(`${address}/v1/titles`
+        return fetch(`${address}/v1/books/all`
         ).then(response => {
 
                 if (response.ok) {
@@ -41,20 +41,21 @@ export const Titles = {
 
             }, networkError => console.log(networkError.message)
         ).then(jsonResponse => {
-            return jsonResponse.map(title => ({
-                id: title.id,
-                author: title.author,
-                title: title.title,
-                publicationYear: title.publicationYear
+            return jsonResponse.map(book => ({
+                id: book.id,
+                title: book.title,
+                status: book.status,
+                image: book.image,
+                releaseDate: book.releaseDate
             }));
         });
 
     },
 
-    changeTitle(title){
+    changeBook(book){
 
-        const url = `${address}/v1/titles`;
-        const data = JSON.stringify(title);
+        const url = `${address}/v1/books`;
+        const data = JSON.stringify(book);
 
         return fetch(url, {
                 method: 'PUT',

@@ -1,34 +1,32 @@
 import React, {useContext} from "react";
 import {UserContext} from "../../contexts/UserContext";
-import {login} from "../../util/login";
+import "./Login.css"
+import {LoginForm} from "./LoginForm/LoginForm";
+import {NavLink} from "react-router-dom";
 
 export function Login() {
     const {user, setUser} = useContext(UserContext);
 
     return (
         <div>
-            <h2>Home</h2>
-            <pre>{JSON.stringify(user, null, 2)}</pre>
+            <h2>Account</h2>
             {user ? (
-                <button
-                    onClick={() => {
-                        // call logout
-                        setUser(null);
-                        localStorage.setItem('user', null);
-                    }}
-                >
-                    logout
-                </button>
+                    <button
+                        onClick={() => {
+                            // call logout
+                            setUser(null);
+                            localStorage.setItem('user', null);
+                        }}
+                    >
+                        Log Out
+                    </button>
             ) : (
-                <button
-                    onClick={async () => {
-                        const user = await login();
-                        setUser(user);
-                        localStorage.setItem('user', JSON.stringify(user));
-                    }}
-                >
-                    login
-                </button>
+                <div className={"login-form"}>
+                    <LoginForm setUser={setUser}/>
+                    <NavLink to={"/register"} activeClassName="active">
+                        Not registered yet? Click me!
+                    </NavLink>
+                </div>
             )}
         </div>
     );

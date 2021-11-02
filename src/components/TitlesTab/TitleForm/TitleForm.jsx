@@ -1,53 +1,69 @@
+import './TitleForm.css'
 import React from 'react';
-import { useFormik } from 'formik';
+import {MyTextInput} from "../../../contexts/FormInputs";
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
 import {Titles} from "../../../util/Titles";
 
-export const TitleForm = () => {
-    // Note that we have to initialize ALL of fields with values. These
-    // could come from props, but since we don’t want to prefill this form,
-    // we just use an empty string. If we don’t do this, React will yell
-    // at us.
-    const formik = useFormik({
-        initialValues: {
-            author: '',
-            title: '',
-            publicationYear: '',
-        },
-        onSubmit: values => {
-            Titles.addToWatchlist(values);
-        },
-    });
-
+export const TitleForm = (props) => {
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <label htmlFor="author">Author</label>
-            <input
-                id="author"
-                name="author"
-                type="text"
-                onChange={formik.handleChange}
-                value={formik.values.author}
-            />
+        <>
+            <h1>Add Title</h1>
+            <div className={"table-form"}>
+            <Formik
+                initialValues={{
+                    author: '',
+                    title: '',
+                    publicationYear:'',
+                }}
+                validationSchema={Yup.object({
+                    author: Yup.string()
+                        .required('Please enter author name and surname'),
+                    title: Yup.string()
+                        .required('Please provide books title'),
+                    publicationYear: Yup.number()
+                        .required('Please provide publication year'),
+                })}
+                onSubmit={(values, {setSubmitting, resetForm}) => {
 
-            <label htmlFor="title">Title</label>
-            <input
-                id="title"
-                name="title"
-                type="text"
-                onChange={formik.handleChange}
-                value={formik.values.title}
-            />
+                    Titles.addTitle(values)
+                        .then(() => {
+                            resetForm()
+                            props.update()
+                        })
+                    setSubmitting(false);
 
-            <label htmlFor="publicationYear">Publication year</label>
-            <input
-                id="publicationYear"
-                name="publicationYear"
-                type="number"
-                onChange={formik.handleChange}
-                value={formik.values.publicationYear}
-            />
+                }}
+            >
+                <Form>
 
-            <button type="submit">Submit</button>
-        </form>
+                    <MyTextInput
+                        label="Author"
+                        name="author"
+                        type="string"
+                        placeholder="Author's name and surname"
+                    />
+
+                    <MyTextInput
+                        label="Title"
+                        name="title"
+                        type="string"
+                        placeholder="Books's title"
+                    />
+
+                    <MyTextInput
+                        label="Publication Year"
+                        name="publicationYear"
+                        type="number"
+                        placeholder="Books's publication year"
+                    />
+
+                    <button type="submit">Add title</button>
+                </Form>
+            </Formik>
+            </div>
+        </>
     );
+
+
 };
