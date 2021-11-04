@@ -66,15 +66,15 @@ export const Search = {
             }, networkError => console.log(networkError.message)
         ).then(jsonResponse => {
             return jsonResponse
-                .filter(book => book.volumeInfo.industryIdentifiers)
+                .filter(book => book.industryIdentifiers)
                 .map(book => ({
-                id: book.volumeInfo.id,
-                title: book.volumeInfo.title,
-                subtitle: book.volumeInfo.subtitle,
+                id: book.id,
+                title: book.title,
+                subtitle: book.subtitle,
                 ebook: true,
-                isbn13: book.volumeInfo.industryIdentifiers[0].identifier,
-                image: book.volumeInfo.imageLinks.thumbnail,
-                url: book.volumeInfo.infoLink
+                isbn13: book.industryIdentifiers[0].identifier,
+                image: book.imageLinks.thumbnail,
+                url: book.infoLink
             }));
         });
 
