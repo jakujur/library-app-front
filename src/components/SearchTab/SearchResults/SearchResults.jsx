@@ -11,7 +11,7 @@ export const SearchResults = (props) => {
                 <br />
             </h2>}
 
-            <div className={"inline-flex overflow-x-scroll w-full"}>
+            <div className={"inline-flex overflow-x-auto w-full"}>
                 {
                     props.searchResults.map(book => {
                         return  <LibraryBook book={book} key = {book.id} addToRentals={props.addToRentals}/>

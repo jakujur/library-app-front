@@ -1,5 +1,3 @@
-import './WatchlistTab.css'
-
 import React, {useState, useEffect, useContext} from 'react';
 import {WatchlistBookList} from './WatchlistBookList/WatchlistBookList';
 import {Watchlist} from '../../util/Watchlist';
@@ -41,7 +39,7 @@ export const WatchlistTab = () => {
         <div>
             <h1 className={"mb-3 text-2xl font-semibold text-white"}>Your watchlist</h1>
 
-            <div className={"watchlists"}>
+            <div className={"flex w-full justify-center md:flex-column md:align-center"}>
                     <WatchlistBookList watchlist={watchlist} removeFromWatchlist={removeFromWatchlist}/>
                     <WatchlistBookList watchlist={eBooks} removeFromWatchlist={removeFromWatchlist}/>
             </div>

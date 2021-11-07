@@ -1,4 +1,3 @@
-import './SearchTab.css'
 import React, {useState, useContext} from 'react';
 import {SearchBar} from "./SearchBar/SearchBar";
 import {SearchResults} from "./SearchResults/SearchResults";

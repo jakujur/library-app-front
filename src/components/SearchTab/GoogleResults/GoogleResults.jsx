@@ -11,7 +11,7 @@ export const GoogleResults = (props) => {
                 <br />
             </h2>}
 
-            <div className={"inline-flex overflow-x-scroll w-full"}>
+            <div className={"inline-flex overflow-x-auto w-full"}>
                 {
                     props.searchResults.map(book => {
                         return <GoogleBook book={book} key={book.isbn13}

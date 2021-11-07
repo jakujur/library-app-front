@@ -1,4 +1,3 @@
-import './LibraryBook.css'
 import React, {useEffect, useState} from "react";
 
 export const LibraryBook = (props) => {
@@ -19,7 +18,7 @@ export const LibraryBook = (props) => {
     }, [props.book.status]);
 
     return (
-        <div className={"library-book"}>
+        <div className={"bg-white mr-1.5 mb-1.5 h-80 w-52 min-w-52 p-1 grid justify-center items-center rounded-2xl transition duration-500 ease-in-out transform hover:scale-95"}>
             <div className={"w-40 h-56"}>
              <img className={"w-full max-h-56"} src={props.book.image} alt={"book front cover"} height={230}/>
             </div>
