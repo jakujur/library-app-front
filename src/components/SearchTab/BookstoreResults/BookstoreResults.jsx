@@ -11,7 +11,7 @@ export const BookstoreResults = (props) => {
                 <br />
             </h2>}
 
-            <div className={"inline-flex overflow-x-auto w-full"}>
+            <div className={"inline-flex overflow-x-auto w-full scrollbar"}>
                 {
                     props.searchResults.map(book => {
                         return <BookstoreBook book={book} key={book.isbn13}
