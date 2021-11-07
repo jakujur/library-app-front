@@ -17,6 +17,29 @@
         @apply hidden;
     }
 
+    /* total width */
+    ::-webkit-scrollbar {
+        @apply bg-white;
+        @apply rounded-2xl;
+    }
+
+    /* scrollbar itself */
+    ::-webkit-scrollbar-thumb {
+        @apply bg-blue-900;
+        @apply rounded-2xl;
+        @apply border-4;
+        @apply border-solid;
+        @apply border-white;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-blue-600;
+    }
+
+    /* set button(top and bottom of the scrollbar) */
+    ::-webkit-scrollbar-button {
+        @apply hidden;
+    }
+
     .min-w-52 {
         min-width: 13rem;
     }
@@ -29,24 +52,6 @@
         min-width: 20rem;
     }
 
-    /* total width */
-    ::-webkit-scrollbar {
-        background:#fff;
-        border-radius:16px;
-    }
-
-    /* scrollbar itself */
-    ::-webkit-scrollbar-thumb {
-        background-color:#1E3A8A;
-        border-radius:16px;
-        border:5px solid #fff
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background-color: #162b66;
-    }
-
-    /* set button(top and bottom of the scrollbar) */
-    ::-webkit-scrollbar-button {display:none}
 }
 
 
