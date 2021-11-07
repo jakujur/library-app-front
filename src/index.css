@@ -17,13 +17,11 @@
         @apply hidden;
     }
 
-    /* total width */
     ::-webkit-scrollbar {
         @apply bg-white;
         @apply rounded-2xl;
     }
 
-    /* scrollbar itself */
     ::-webkit-scrollbar-thumb {
         @apply bg-blue-900;
         @apply rounded-2xl;
@@ -31,11 +29,11 @@
         @apply border-solid;
         @apply border-white;
     }
+
     ::-webkit-scrollbar-thumb:hover {
         @apply bg-blue-600;
     }
 
-    /* set button(top and bottom of the scrollbar) */
     ::-webkit-scrollbar-button {
         @apply hidden;
     }
