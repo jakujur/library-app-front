@@ -1,4 +1,3 @@
-import './App.css';
 import {Switch, Route, Redirect, NavLink} from "react-router-dom";
 import {SearchTab} from '../SearchTab/SearchTab';
 import {WatchlistTab} from '../WatchlistTab/WatchlistTab'
@@ -11,6 +10,7 @@ import {RegisterForm} from "../Login/RegisterForm/RegisterForm";
 import {ReadersTable} from "../ReadersTable/ReadersTable";
 import {UserContext} from "../../contexts/UserContext";
 import React, {useState, useMemo, useEffect} from "react";
+import "tailwindcss/tailwind.css"
 
 function App() {
 
@@ -38,60 +38,99 @@ function App() {
     };
 
     const navigation = () => {
-        if (user){
+        if (user) {
             if (user.admin) {
-                return(
-                    <>
-                        <NavLink to={ROUTES.TITLES} activeClassName="active" className={"navigation"}>
-                            Titles
-                        </NavLink>
-                        <NavLink to={ROUTES.BOOKS} activeClassName="active" className={"navigation"}>
-                            Books
-                        </NavLink>
-                        <NavLink to={ROUTES.ALL_RENTALS} activeClassName="active" className={"navigation"}>
-                            Rentals
-                        </NavLink>
-                        <NavLink to={ROUTES.READERS} activeClassName="active" className={"navigation"}>
-                            Readers
-                        </NavLink>
-                        <NavLink to={ROUTES.LOGIN} activeClassName="active" className="account">
-                            Account
-                        </NavLink>
-                    </>
+                return (
+                    <div className="max-w-8xl mx-auto px-4">
+                        <div className="flex justify-between">
+                            <div className="flex space-x-7">
+                                <div className={"flex items-center space-x-3"}>
+                                    <NavLink to={ROUTES.TITLES}
+                                             activeClassName="py-4 px-2 text-blue-900 border-b-4 border-blue-900 font-semibold"
+                                             className={"py-4 px-2 text-gray-900 font-semibold hover:text-blue-900 transition duration-300"}>
+                                        Titles
+                                    </NavLink>
+                                    <NavLink to={ROUTES.BOOKS}
+                                             activeClassName="py-4 px-2 text-blue-900 border-b-4 border-blue-900 font-semibold"
+                                             className={"py-4 px-2 text-gray-900 font-semibold hover:text-blue-900 transition duration-300"}>
+                                        Books
+                                    </NavLink>
+                                    <NavLink to={ROUTES.ALL_RENTALS}
+                                             activeClassName="py-4 px-2 text-blue-900 border-b-4 border-blue-900 font-semibold"
+                                             className={"py-4 px-2 text-gray-900 font-semibold hover:text-blue-900 transition duration-300"}>
+                                        Rentals
+                                    </NavLink>
+                                    <NavLink to={ROUTES.READERS}
+                                             activeClassName="py-4 px-2 text-blue-900 border-b-4 border-blue-900 font-semibold"
+                                             className={"py-4 px-2 text-gray-900 font-semibold hover:text-blue-900 transition duration-300"}>
+                                        Readers
+                                    </NavLink>
+                                </div>
+                            </div>
+                            <div className="flex items-center space-x-6 ">
+                                <NavLink to={ROUTES.LOGIN}
+                                         activeClassName="py-4 px-2 text-blue-900 border-b-4 border-blue-900 font-semibold"
+                                         className="py-2 px-2 font-medium text-gray-500 rounded hover:900 hover:text-blue-900 transition duration-300">
+                                    Account
+                                </NavLink>
+                            </div>
+                        </div>
+                    </div>
                 )
             } else {
-                return(
-                    <>
-                        <NavLink to={ROUTES.SEARCH} activeClassName="active" className={"navigation"}>
-                            Search
-                        </NavLink>
-                        <NavLink to={ROUTES.WATCHLIST} activeClassName="active" className={"navigation"}>
-                            Watchlist
-                        </NavLink>
-                        <NavLink to={ROUTES.RENTALS} activeClassName="active" className={"navigation"}>
-                            Rentals
-                        </NavLink>
-                        <NavLink to={ROUTES.LOGIN} activeClassName="active" className="account">
-                            Account
-                        </NavLink>
-                    </>
+                return (
+                    <div className="max-w-8xl mx-auto px-4">
+                        <div className="flex justify-between">
+                            <div className="flex space-x-7">
+                                <div className={"flex items-center space-x-3"}>
+                                    <NavLink to={ROUTES.SEARCH}
+                                             activeClassName="py-4 px-2 text-blue-900 border-b-4 border-blue-900 font-semibold"
+                                             className={"py-4 px-2 text-gray-500 font-semibold hover:text-blue-900 transition duration-300"}>
+                                        Search
+                                    </NavLink>
+                                    <NavLink to={ROUTES.WATCHLIST}
+                                             activeClassName="py-4 px-2 text-blue-900 border-b-4 border-blue-900 font-semibold"
+                                             className={"py-4 px-2 text-gray-500 font-semibold hover:text-blue-900 transition duration-300"}>
+                                        Watchlist
+                                    </NavLink>
+                                    <NavLink to={ROUTES.RENTALS}
+                                             activeClassName="py-4 px-2 text-blue-900 border-b-4 border-blue-900 font-semibold"
+                                             className={"py-4 px-2 text-gray-500 font-semibold hover:text-blue-900 transition duration-300"}>
+                                        Rentals
+                                    </NavLink>
+                                </div>
+                            </div>
+                            <div className="flex items-center space-x-6 ">
+                                <NavLink to={ROUTES.LOGIN}
+                                         activeClassName="py-4 px-2 text-blue-900 border-b-4 border-blue-900 font-semibold"
+                                         className="py-2 px-2 font-medium text-gray-500 rounded hover:text-blue-900 transition duration-300">
+                                    Account
+                                </NavLink>
+                            </div>
+                        </div>
+                    </div>
                 )
             }
         } else {
-            return(
-                <NavLink to={ROUTES.LOGIN} activeClassName="active" className="account">
-                    Log In
-                </NavLink>
+            return (
+                <div className="flex items-center space-x-6 ">
+                    <NavLink to={ROUTES.LOGIN}
+                             activeClassName="py-4 px-2 text-blue-900 border-b-4 border-blue-900 font-semibold"
+                             className="ml-4 py-2 px-4 font-medium text-gray-500 rounded hover:text-blue-900 transition duration-300">
+                        Log In
+                    </NavLink>
+                </div>
             )
         }
     }
 
     return (
-        <div className={"app"}>
-            <nav>
+        <div>
+            <nav className={"bg-white shadow-lg"}>
                 {navigation()}
             </nav>
-            <main>
+
+            <main className={"m-6"}>
                 <Switch>
                     <Route exact path="/">
                         <Redirect to={ROUTES.LOGIN}/>

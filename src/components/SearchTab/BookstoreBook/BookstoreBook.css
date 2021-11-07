@@ -1,12 +1,10 @@
 .bookstore-book {
     background-color: white;
     width: 200px;
+    min-width: 200px;
     height: 330px;
-    border-style: solid;
-    border-radius: 5px;
+    border-radius: 15px;
     margin: 3px 3px;
-    border-color: #979797;
-    border-width: 1px;
     padding: 5px;
     display: grid;
     justify-content: center;
@@ -22,27 +20,4 @@
     align-self: center;
     justify-self: center;
     max-width: 180px;
-}
-
-.book-link {
-    text-decoration: none;
-    color: black;
-}
-
-.bookstore-button {
-    width: 180px;
-    height: 30px;
-
-    background-color: var(--light-theme);
-    cursor: pointer;
-    font-size: 15px;
-    color: #979797;
-    transition: all 0.3s;
-    position: relative;
-
-    text-align: center;
-    overflow: hidden;
-
-    border-radius: 5px;
-    box-shadow: 0 6px 5px -10px;
 }

@@ -18,7 +18,7 @@ export const BooksTable = (props) => {
                 setTimeout(() => {
                     Books.changeBook(newData).then(r => props.update());
                     resolve();
-                }, 1000)
+                }, 200)
             })
     }
 

@@ -7,11 +7,6 @@
     min-width: 360px;
 }
 
-.watchlist-book img {
-    align-self: center;
-    justify-self: center;
-}
-
 .watchlist-info {
     display: grid;
     margin-left: 30px;
@@ -21,24 +16,6 @@
     font-size: 20px;
     color: black;
     margin-top: 0;
-}
-
-.remove-button {
-    width: 180px;
-    height: 30px;
-
-    background-color: white;
-    cursor: pointer;
-    font-size: 15px;
-    color: #979797;
-    transition: all 0.3s;
-    position: relative;
-
-    text-align: center;
-    overflow: hidden;
-
-    border-radius: 5px;
-    box-shadow: 0 6px 5px -10px;
 }
 
 @media only screen and (max-width: 825px) {

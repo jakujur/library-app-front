@@ -1,4 +1,3 @@
-import './RentalsTab.css'
 import React, {useState, useEffect, useContext} from 'react';
 import {RentalsList} from './RentalsList/RentalsList'
 import {Rentals} from '../../util/Rentals';
@@ -19,7 +18,7 @@ export const RentalsTab = () => {
 
     return (
         <div>
-            <h1>Your rentals</h1>
+            <h1 className={"mb-3 text-2xl font-semibold text-white"}>Your rentals</h1>
             <RentalsList rentals={rentals}/>
         </div>
     )

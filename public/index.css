@@ -1,10 +1,5 @@
-#root {
-
-  font-family: "Open Sans", sans-serif;
-}
-
 html {
-  background-image: url("https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-image: url("pikrepo.com.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -14,10 +9,6 @@ html {
 
 body {
   margin: 0;
-}
-
-.login_info {
-  margin-left: auto
 }
 
 

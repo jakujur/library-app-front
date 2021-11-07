@@ -47,7 +47,7 @@ export const SearchTab = () => {
 
     return (
         <div className={"search-tab"}>
-            <h1><span className={"highlight"}>Search for a book</span></h1>
+            <h1 className={"mb-3 text-2xl font-semibold text-white"}>Search for a book</h1>
             <SearchBar onSearch={search} setInput={setInput}/>
             <div className={'searches'}>
                 <SearchResults searchResults={librarySearchResults} addToRentals={addToRentals}/>

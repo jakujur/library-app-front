@@ -1,5 +1,4 @@
 import React from 'react';
-import './FormInputs.css'
 import {useField} from 'formik';
 
 export const MyTextInput = ({label, ...props}) => {
@@ -9,10 +8,10 @@ export const MyTextInput = ({label, ...props}) => {
     const [field, meta] = useField(props);
     return (
         <>
-            <label htmlFor={props.id || props.name}>{label}</label>
-            <input className="text-input" {...field} {...props} />
+            <label className="block text-lg font-semibold text-blue-900" htmlFor={props.id || props.name}>{label}</label>
+            <input className="w-full block border-2 border-white bg-white h-10 px-5 rounded-lg text-sm focus:outline-none" {...field} {...props} />
             {meta.touched && meta.error ? (
-                <div className="error">{meta.error}</div>
+                <div className="text-red-600 text-xs">{meta.error}</div>
             ) : null}
         </>
     );
@@ -26,12 +25,12 @@ export const MyCheckbox = ({children, ...props}) => {
     const [field, meta] = useField({...props, type: 'checkbox'});
     return (
         <div>
-            <label className="checkbox-input">
-                <input type="checkbox" {...field} {...props} />
+            <label className="block text-lg font-semibold text-blue-900">
+                <input className="block w-full border-2 border-white bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" type="checkbox" {...field} {...props} />
                 {children}
             </label>
             {meta.touched && meta.error ? (
-                <div className="error">{meta.error}</div>
+                <div className="text-red-600 text-xs">{meta.error}</div>
             ) : null}
         </div>
     );
@@ -41,10 +40,10 @@ export const MySelect = ({label, ...props}) => {
     const [field, meta] = useField(props);
     return (
         <div>
-            <label htmlFor={props.id || props.name}>{label}</label>
-            <select {...field} {...props} />
+            <label className="block text-lg font-semibold text-blue-900" htmlFor={props.id || props.name}>{label}</label>
+            <select className="block w-full border-2 border-white bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" {...field} {...props} />
             {meta.touched && meta.error ? (
-                <div className="error">{meta.error}</div>
+                <div className="text-red-600 text-xs">{meta.error}</div>
             ) : null}
         </div>
     );

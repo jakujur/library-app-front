@@ -39,7 +39,7 @@ export const WatchlistTab = () => {
 
     return (
         <div>
-            <h1>Your watchlist</h1>
+            <h1 className={"mb-3 text-2xl font-semibold text-white"}>Your watchlist</h1>
 
             <div className={"watchlists"}>
                     <WatchlistBookList watchlist={watchlist} removeFromWatchlist={removeFromWatchlist}/>

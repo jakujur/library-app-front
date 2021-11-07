@@ -20,12 +20,15 @@ export const LibraryBook = (props) => {
 
     return (
         <div className={"library-book"}>
-            <img src={props.book.image} alt={"book front cover"} height={230}/>
-
+            <div className={"w-40 h-56"}>
+             <img className={"w-full max-h-56"} src={props.book.image} alt={"book front cover"} height={230}/>
+            </div>
             {isRented ?
-                "Rented"
+                <button
+                    className={"p-1 pl-2 pr-2 bg-blue-900 border-2 border-blue-900 text-gray-100 text-sm rounded-lg focus:border-4 focus:border-blue-900 cursor-not-allowed"}>
+                    Rented</button>
                 :
-                <button className={"add-to-rentals"} onClick={() => {
+                <button className={"p-1 pl-2 pr-2 bg-transparent border-2 border-blue-900 text-blue-900 text-sm rounded-lg hover:bg-blue-900 hover:text-gray-100 focus:border-4 focus:border-blue-900"} onClick={() => {
                     handleClick()
                 }}>Book</button>}
 

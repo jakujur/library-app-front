@@ -10,7 +10,7 @@ export const RegisterForm = () => {
     const history = useHistory();
 
     return (
-        <div className={"login-form"}>
+        <div className={"m-auto max-w-lg"}>
             <h2>Register new account</h2>
             <Formik
                 initialValues={{
@@ -73,12 +73,13 @@ export const RegisterForm = () => {
                         placeholder="Enter password"
                     />
 
-                    <button type="submit">Register</button>
+                    <button type="submit" className={"mt-2 p-1 pl-2 pr-2 bg-transparent border-2 border-blue-900 text-blue-900 text-sm rounded-lg hover:bg-blue-900 hover:text-gray-100 focus:border-4 focus:border-blue-900"}>Register</button>
+                    <NavLink to={"/login"} activeClassName="active" className={"ml-2 mt-2 p-1 pl-2 pr-2 bg-transparent border-2 border-blue-900 text-blue-900 text-sm rounded-lg hover:bg-blue-900 hover:text-gray-100 focus:border-4 focus:border-blue-900"}>
+                        Back to login page
+                    </NavLink>
                 </Form>
             </Formik>
-            <NavLink to={"/login"} activeClassName="active">
-                Back to login page
-            </NavLink>
+
         </div>
     );
 }

@@ -1,31 +1,27 @@
 import React, {useContext} from "react";
 import {UserContext} from "../../contexts/UserContext";
-import "./Login.css"
 import {LoginForm} from "./LoginForm/LoginForm";
-import {NavLink} from "react-router-dom";
 
 export function Login() {
     const {user, setUser} = useContext(UserContext);
 
     return (
-        <div>
-            <h2>Account</h2>
+        <div className={"m-auto max-w-lg"}>
+            <h2 className={"text-2xl font-semibold text-blue-900"}>Account</h2>
             {user ? (
-                    <button
-                        onClick={() => {
-                            // call logout
-                            setUser(null);
-                            localStorage.setItem('user', null);
-                        }}
-                    >
-                        Log Out
-                    </button>
+                <button
+                    className={"p-1 pl-2 pr-2 bg-transparent border-2 border-blue-900 text-blue-900 text-sm rounded-lg hover:bg-blue-900 hover:text-gray-100 focus:border-4 focus:border-blue-900"}
+                    onClick={() => {
+                        // call logout
+                        setUser(null);
+                        localStorage.setItem('user', null);
+                    }}
+                >
+                    Log Out
+                </button>
             ) : (
-                <div className={"login-form"}>
+                <div>
                     <LoginForm setUser={setUser}/>
-                    <NavLink to={"/register"} activeClassName="active">
-                        Not registered yet? Click me!
-                    </NavLink>
                 </div>
             )}
         </div>

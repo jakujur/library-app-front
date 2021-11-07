@@ -7,8 +7,8 @@ import {Books} from "../../../util/Books";
 export const BooksForm = (props) => {
     return (
         <>
-            <h1>Add Book</h1>
-            <div className={"table-form"}>
+            <h1 className={"text-2xl font-semibold text-white"}>Add Book</h1>
+            <div className={"w-2/6"}>
                 <Formik
 
                     initialValues={{
@@ -75,7 +75,7 @@ export const BooksForm = (props) => {
                             placeholder="Books's release date"
                         />
 
-                        <button type="submit">Add book</button>
+                        <button className={"mt-2 p-1 pl-2 pr-2 bg-blue-900 border-2 border-blue-900 text-white text-sm rounded-lg hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 focus:border-4 focus:border-blue-900"} type="submit">Add book</button>
                     </Form>
                 </Formik>
             </div>

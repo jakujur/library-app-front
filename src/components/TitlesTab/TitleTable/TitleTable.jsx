@@ -19,7 +19,7 @@ export const TitleTable = (props) => {
                 setTimeout(() => {
                     Titles.changeTitle(newData).then(r => props.update());
                     resolve();
-                }, 1000)
+                }, 200)
             })
     }
 
