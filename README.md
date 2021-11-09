@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# IT Library and Bookstore - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+###In IT Library rental app, You can:
 
-## Available Scripts
+* Rent available books from a number of titles
+* Search for more books and Ebooks and buy them on Amazon
+* Search for more books and Ebooks and buy or get them free from GoogleBooks
+* Add GoogleBooks and ITBookstore entries you are interested in to your Watchlist
 
-In the project directory, you can run:
+##[Live Frontend Demo!](https://it-library-rental.netlify.app/)
 
-### `npm start`
+####To test client-side functionalities, log in as:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*email:* **client@gmail.com**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+*password:* **password**
 
-### `npm test`
+####To test administration panel functionalities, log in as:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*email:* **admin@gmail.com**
 
-### `npm run build`
+*password:* **password**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Frameworks and Technologies
+React, Tailwind CSS, React Router, Formik, Yup, Material Table
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Development Patterns & Other
+Component Composition, React Hooks, Context
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Instalation
+### Frontend
+1. Source code: https://github.com/jakujur/library-app-front
+2. git clone https://github.com/jakujur/library-app-front.git
+3. type `npm start` in terminal
+4. Application will be run on the localhost:3000
 
-### `npm run eject`
+### Backend - REST API
+1. Source code: https://github.com/jakjur-dev/Library-Rental-Application
+2. git clone https://github.com/jakjur-dev/Library-Rental-Application.git
+3. Download and install [pgAdmin](https://www.pgadmin.org/download/)
+4. Create library-app database
+5. Run main method in the **LibraryRentalApplication** class
+6. Application will be run on the localhost:8080 address
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+..*please note, that database is running only with pgAdmin on. If you want to change database system to MySQL, please modify *application.properties* file accordingly (some named querries might not work)
